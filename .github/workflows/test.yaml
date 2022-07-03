@@ -11,6 +11,5 @@ jobs:
       - run: dart test --file-reporter json:test.json
       - run: pwd
       - run: cat test.json
-      - run: echo ${{github.actor}}
       - run: pip3 install openpyxl
-      - run: python3 check.py
+      - run: python3 check.py ${{github.actor}}
