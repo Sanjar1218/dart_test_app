@@ -1,4 +1,5 @@
 from openpyxl import Workbook
+import subprocess
 
 def check():
     f = open("test.json", 'r')
@@ -30,6 +31,6 @@ if __name__ == "__main__":
     ws = wb.active
 
     ws.append(["name",] + findFile())
-    ws.append(["username"] + check())
+    ws.append([subprocess.run(["${{github.actor}}"], capture_output=True)] + check())
 
     wb.save("check.xlsx")
