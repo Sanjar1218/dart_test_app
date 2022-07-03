@@ -7,13 +7,12 @@ jobs:
       - uses: actions/checkout@v2
       - uses: dart-lang/setup-dart@v1.3
       - run: dart pub get
-      - run: dart test --file-reporter json:test.json
       - run: pip3 install openpyxl
-      - run: python3 check.py ${{github.actor}}
       - uses: actions/checkout@v3
       - run: |
           git config user.name ${{github.actor}}
           git config user.email ${{github.event.pusher.email}}
-          git add .
+          git add dart test --file-reporter json:test.json
+          git add python3 check.py ${{github.actor}}
           git commit -m "generated"
           git push
