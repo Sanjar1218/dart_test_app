@@ -1,7 +1,7 @@
 from openpyxl import Workbook
 
 def check():
-    f = open("test.json", 'r')
+    f = open("tesadsf.json", 'r')
     lst = []
     for i in f.readlines():
         if i.find(''':"success"''') != -1:
@@ -12,7 +12,7 @@ def check():
     return lst
 
 def findFile():
-    f = open("test.json", 'r')
+    f = open("tesasdt.json", 'r')
     lst = []
     for i in f.readlines():
         b = i.find("url")
