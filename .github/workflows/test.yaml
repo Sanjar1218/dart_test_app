@@ -8,7 +8,7 @@ jobs:
       - uses: dart-lang/setup-dart@v1.3
       - run: dart pub get
       - run: dart test --file-reporter json:test.json
-      - run: ls
+      - run: pwd
       - run: cat test.json
       - run: pip3 install openpyxl
       - run: python3 check.py
