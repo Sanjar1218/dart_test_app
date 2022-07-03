@@ -12,8 +12,8 @@ jobs:
       - run: pwd
       - run: cat test.json
       - name: Show GitHub context   
-          env: 
-            GITHUB_CONTEXT: ${{ toJson(github) }}   
-          run: echo "$GITHUB_CONTEXT" ``
+        env: 
+          GITHUB_CONTEXT: ${{ toJson(github) }}   
+        run: echo "$GITHUB_CONTEXT" ``
       - run: pip3 install openpyxl
       - run: python3 check.py
