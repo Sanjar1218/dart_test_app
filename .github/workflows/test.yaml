@@ -10,11 +10,6 @@ jobs:
       - run: dart test --file-reporter json:test.json
       - run: pip3 install openpyxl
       - run: python3 check.py ${{github.actor}}
-      - uses: actions/checkout@v3
-      - run: |
-          date > generated.txt
-          git config user.name Sanjarbek
-          git config user.email sanjarsaidov173@gmail.com
-          git add .
-          git commit -m "generated"
-          git push
+      - run: git add .
+      - run: git commit -m myself
+      - run: git push
