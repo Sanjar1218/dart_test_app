@@ -10,8 +10,3 @@ jobs:
       - run: dart test --file-reporter json:test.json
       - run: pip3 install openpyxl
       - run: python3 check.py ${{github.actor}}
-      - uses: actions/checkout@v3
-      - run: |
-          git config user.name ${{github.actor}}
-          git config user.email ${{github.event.pusher.email}}
-          git status
