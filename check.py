@@ -1,7 +1,7 @@
 from openpyxl import Workbook
 
 def check():
-    f = open("tes.json", 'r')
+    f = open("test.json", 'r')
     lst = []
     for i in f.readlines():
         if i.find(''':"success"''') != -1:
