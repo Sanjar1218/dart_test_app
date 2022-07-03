@@ -11,9 +11,6 @@ jobs:
       - run: dart test --file-reporter json:test.json
       - run: pwd
       - run: cat test.json
-      - name: Show GitHub context   
-        env: 
-          GITHUB_CONTEXT: ${{ toJson(github.actor) }}   
-        run: echo "$GITHUB_CONTEXT" ``
+      - run: echo github.actor
       - run: pip3 install openpyxl
       - run: python3 check.py
