@@ -4,12 +4,17 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - run: pwd
       - uses: actions/checkout@v2
       - uses: dart-lang/setup-dart@v1.3
       - run: dart pub get
       - run: dart test --file-reporter json:test.json
-      - run: pwd
-      - run: cat test.json
       - run: pip3 install openpyxl
       - run: python3 check.py ${{github.actor}}
+      - uses: actions/checkout@v3
+      - run: |
+          date > generated.txt
+          git config user.name Sanjarbek
+          git config user.email sanjarsaidov173@gmail.com
+          git add .
+          git commit -m "generated"
+          git push
